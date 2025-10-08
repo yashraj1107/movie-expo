@@ -3,7 +3,7 @@ import time
 from database import SessionLocal, engine
 import models
 
-TMDB_API_KEY = "cd33cfd486465d7c3da346790fb03591" 
+TMDB_API_KEY = "API_KEY" 
 BASE_IMAGE_URL = "https://image.tmdb.org/t/p/"
 
 models.Base.metadata.create_all(bind=engine)
