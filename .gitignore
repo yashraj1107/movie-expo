@@ -1,0 +1,20 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# SQLite database
+backend/movies.db
+backend/test.db
+
+# Node
+node_modules/
+dist/
+.env
+.DS_Store
+
+# IDE specific
+.idea/
+.vscode/
