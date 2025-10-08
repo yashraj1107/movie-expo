@@ -27,7 +27,10 @@ export interface Movie {
   synopsis: string | null;
   runtime_minutes: number | null;
 }
-
+export interface Review {
+  author: string;
+  content: string;
+}
 export interface MovieInProfile {
   id: number;
   title: string;
