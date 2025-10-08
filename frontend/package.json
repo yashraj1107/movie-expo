@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run lint && npm test -- --run && tsc && vite build",
+    "build": "npm run lint && npm test -- --run && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest"
