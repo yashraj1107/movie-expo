@@ -29,7 +29,7 @@ These are the primary instructions for cloning and running the project in a prod
 ### Prerequisites
 
 -   [Docker](https://www.docker.com/products/docker-desktop/) must be installed and running on your system.
--   You need a free API key from [The Movie Database (TMDb)](https://www.themoviedb.org/signup).
+-   You need a free API key from [The Movie Database (TMDb)](https://www.themoviedb.org/signup).(Only If you want to change the movies)
 
 ### Running the Application
 
@@ -39,7 +39,7 @@ These are the primary instructions for cloning and running the project in a prod
     cd movie-explorer
     ```
 
-2.  **Add Your TMDb API Key**
+2.  **Add Your TMDb API Key** (Needed Only If you want to change the movies in the db)
     -   Open the `backend/seed.py` file.
     -   Find the line `TMDB_API_KEY = "YOUR_API_KEY_HERE"` and replace the placeholder with your actual TMDb API key.
 
