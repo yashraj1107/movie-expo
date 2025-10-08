@@ -6,7 +6,6 @@ __pycache__/
 *.pyd
 
 # SQLite database
-backend/movies.db
 backend/test.db
 
 # Node
