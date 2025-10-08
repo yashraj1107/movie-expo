@@ -59,3 +59,7 @@ class DirectorDetail(Director):
     movies: List[MovieInProfile] = []
     class Config:
         orm_mode = True
+        
+class Review(BaseModel):
+    author: str
+    content: str

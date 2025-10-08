@@ -3,11 +3,18 @@ from typing import Optional
 import models
 
 def get_movies(
-    db: Session, skip: int = 0, limit: int = 100,
-    genre_id: Optional[int] = None, director_id: Optional[int] = None,
-    actor_id: Optional[int] = None, year: Optional[int] = None
+    db: Session, 
+    skip: int = 0, 
+    limit: int = 100, 
+    genre_id: Optional[int] = None, 
+    director_id: Optional[int] = None,
+    actor_id: Optional[int] = None,
+    year: Optional[int] = None,
+    sort_by: Optional[str] = None # Add sort_by parameter
 ):
     query = db.query(models.Movie)
+
+    # --- Filtering Logic ---
     if genre_id:
         query = query.filter(models.Movie.genres.any(id=genre_id))
     if director_id:
@@ -16,7 +23,15 @@ def get_movies(
         query = query.filter(models.Movie.actors.any(id=actor_id))
     if year:
         query = query.filter(models.Movie.release_year == year)
-    return query.order_by(models.Movie.rating.desc()).offset(skip).limit(limit).all()
+
+    # --- Sorting Logic ---
+    if sort_by == 'rating_asc':
+        query = query.order_by(models.Movie.rating.asc())
+    else: # Default to sorting by rating descending
+        query = query.order_by(models.Movie.rating.desc())
+
+    return query.offset(skip).limit(limit).all()
+
 
 def search_movies_by_title(db: Session, query: str):
     return db.query(models.Movie).filter(models.Movie.title.ilike(f"%{query}%")).all()
